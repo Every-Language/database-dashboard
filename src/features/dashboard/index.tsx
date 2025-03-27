@@ -4,8 +4,9 @@ import { TopNav } from '@/components/layout/top-nav'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
+import { Dashboard } from './pages/dashboard'
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
     <>
       {/* ===== Top Heading ===== */}
@@ -20,10 +21,7 @@ export default function Dashboard() {
 
       {/* ===== Main ===== */}
       <Main>
-        <div className='mb-2 flex items-center justify-between space-y-2'>
-          <h1 className='text-2xl font-bold tracking-tight'>Dashboard</h1>
-        </div>
-        <div className='grid gap-4'>{/* Your content will go here */}</div>
+        <Dashboard />
       </Main>
     </>
   )

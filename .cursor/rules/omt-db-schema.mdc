@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+### OMT Record DB schema / example data
+
+```
+#   
+CountryLanguage-4zxodgpo6zfadoq6zqgzhxovau-NONE
+
+View
+
+|__typename|createdAt|countryId|languageId|id|updatedAt|
+|---|---|---|---|---|---|
+|{"S":"CountryLanguage"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"NG"}|{"S":"enn"}|{"S":"NG-enn"}|{"S":"2025-02-11T14:31:54.754Z"}|
+|{"S":"CountryLanguage"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"RU"}|{"S":"rmn"}|{"S":"RU-rmn"}|{"S":"2025-02-11T14:31:54.754Z"}|
+|{"S":"CountryLanguage"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"MY"}|{"S":"meo"}|{"S":"MY-meo"}|{"S":"2025-02-11T14:31:54.754Z"}|
+...
+
+#   
+CountryMotherTongue-4zxodgpo6zfadoq6zqgzhxovau-NONE
+
+View
+
+|__typename|createdAt|motherTongueId|countryId|id|updatedAt|
+|---|---|---|---|---|---|
+|{"S":"CountryMotherTongue"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"fipa_ntile"}|{"S":"TZ"}|{"S":"TZ-fipa_ntile"}|{"S":"2025-02-11T14:31:54.754Z"}|
+|{"S":"CountryMotherTongue"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"mam_chiapasmam"}|{"S":"GT"}|{"S":"GT-mam_chiapasmam"}|{"S":"2025-02-11T14:31:54.754Z"}|
+|{"S":"CountryMotherTongue"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"dazaga_goran"}|{"S":"TD"}|{"S":"TD-dazaga_goran"}|{"S":"2025-02-11T14:31:54.754Z"}|
+...
+#   
+OmtAudioFiles-4zxodgpo6zfadoq6zqgzhxovau-NONE
+
+View
+
+|__typename|version|checkStatus|bookChapter|uploadStatus|createdAt|fileSize|userId|updatedAt|filepath|id|publishStatus|duration|translationId|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|{"S":"OmtAudioFiles"}|{"N":"1"}|{"S":"unchecked"}|{"S":"01-genesis_001"}|{"S":"uploaded"}|{"S":"2025-02-26T10:03:18.990Z"}|{"N":"76565"}|{"S":"89a969ee-20e1-7060-2183-0e3b292fbfad"}|{"S":"2025-02-26T10:03:18.990Z"}|{"S":"s3://translations/89a969ee-20e1-7060-2183-0e3b292fbfad/skibidi_brainrot_OMT_1740564171986/01-genesis/001/01-genesis_001_version02.mp3"}|{"S":"skibidi_brainrot_OMT_1740564171986_01-genesis_001_version01"}|{"S":"pending"}|{"N":"3.213061"}|{"S":"skibidi_brainrot_OMT_1740564171986"}|
+|{"S":"OmtAudioFiles"}|{"N":"1"}|{"S":"unchecked"}|{"S":"01-genesis_003"}|{"S":"uploaded"}|{"S":"2025-03-07T04:27:26.466Z"}|{"N":"8270559"}|{"S":"e93939ee-e0c1-708a-6cd6-4f8862cdd2f0"}|{"S":"2025-03-07T04:27:26.466Z"}|{"S":"s3://translations/e93939ee-e0c1-708a-6cd6-4f8862cdd2f0/rki_sittwe_OMT_1740742198358/01-genesis/003/01-genesis_003_version02.mp3"}|{"S":"rki_sittwe_OMT_1740742198358_01-genesis_003_version01"}|{"S":"pending"}|{"N":"332.277551"}|{"S":"rki_sittwe_OMT_1740742198358"}|
+|{"S":"OmtAudioFiles"}|{"N":"1"}|{"S":"unchecked"}|{"S":"42-luke_001"}|{"S":"uploaded"}|{"S":"2025-02-26T12:53:47.631Z"}|{"N":"1367010"}|{"S":"29f999de-70c1-704f-34ca-42fe6838fcad"}|{"S":"2025-02-26T12:53:47.631Z"}|{"S":"s3://translations/29f999de-70c1-704f-34ca-42fe6838fcad/yoy_yoy_OMT_1740572968464/42-luke/001/42-luke_001_version02.mp3"}|{"S":"yoy_yoy_OMT_1740572968464_42-luke_001_version01"}|{"S":"pending"}|{"N":"134.974694"}|{"S":"yoy_yoy_OMT_1740572968464"}|
+...
+#   
+OmtCountries-4zxodgpo6zfadoq6zqgzhxovau-NONE
+
+View
+
+|__typename|updatedAt|createdAt|region|id|name|continent|
+|---|---|---|---|---|---|---|
+|{"S":"OmtCountries"}|{"S":"2025-02-11T04:21:03.744Z"}|{"S":"2025-02-11T04:21:03.744Z"}|{"S":"South-eastern Asia"}|{"S":"VN"}|{"S":"Viet Nam"}|{"S":"Asia"}|
+|{"S":"OmtCountries"}|{"S":"2025-02-11T04:21:03.744Z"}|{"S":"2025-02-11T04:21:03.744Z"}|{"S":"Western Europe"}|{"S":"CH"}|{"S":"Switzerland"}|{"S":"Europe"}|
+|{"S":"OmtCountries"}|{"S":"2025-02-11T04:21:03.744Z"}|{"S":"2025-02-11T04:21:03.744Z"}|{"S":"Northern America"}|{"S":"US"}|{"S":"United States of America"}|{"S":"Americas"}|
+...
+# OmtLanguages-4zxodgpo6zfadoq6zqgzhxovau-NONE
+
+View
+
+|__typename|iso639|alternatenames|createdByType|updatedAt|createdAt|countries|id|name|createdById|
+|---|---|---|---|---|---|---|---|---|---|
+|{"S":"OmtLanguages"}|{"S":"khb"}|{"L":[{"S":"Jinghong"},{"S":"Lü"},{"S":"Dai"},{"S":"Dai Le"},{"S":"Dai Lue"},{"S":"Lu"},{"S":"Lue"},{"S":"Ly"},{"S":"Pai’i’"},{"S":"Pai-I"},{"S":"Shui-Pai-I"},{"S":"Sipsongpanna Dai"},{"S":"Tai Lu"},{"S":"Xishuangbanna Dai"},{"S":"Muang Yong"},{"S":"Shu-Ai-I"},{"S":"Yong"},{"S":"Pai-Yi"},{"S":"Tai Lue"},{"S":"Thai Lu"},{"S":"Duon"},{"S":"Nhuon"}]}|{"S":"imported"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"2025-02-11T14:31:54.754Z"}|{"L":[{"S":"CN"},{"S":"LA"},{"S":"MM"},{"S":"TH"},{"S":"VN"}]}|{"S":"khb"}|{"S":"Lü"}|{"S":"GRN"}|
+|{"S":"OmtLanguages"}|{"S":"blf"}|{"L":[{"S":"Buol"},{"S":"Apadu Vuolo"},{"S":"Bual"},{"S":"Bwo’ol"},{"S":"Bwool"},{"S":"Dia"}]}|{"S":"imported"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"2025-02-11T14:31:54.754Z"}|{"L":[{"S":"ID"}]}|{"S":"blf"}|{"S":"Buol"}|{"S":"GRN"}|
+|{"S":"OmtLanguages"}|{"S":"lgh"}|{"L":[{"S":"Laghuu"},{"S":"Laopa"},{"S":"Laopán"},{"S":"Lolo"},{"S":"Xá Phó"},{"S":"Yi"}]}|{"S":"imported"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"2025-02-11T14:31:54.754Z"}|{"L":[{"S":"VN"}]}|{"S":"lgh"}|{"S":"Laghuu"}|{"S":"GRN"}|
+...
+# OmtMotherTongues-4zxodgpo6zfadoq6zqgzhxovau-NONE 
+View
+
+|__typename|alternatenames|createdByType|progress_oral|updatedAt|createdAt|progress_written|languageId|rod_dialect_code|id|name|createdById|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|{"S":"OmtMotherTongues"}|{"L":[{"S":"Ghale, Northern: Jagat"}]}|{"S":"imported"}|{"N":"0"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"2025-02-11T14:31:54.754Z"}|{"N":"0"}|{"S":"ghh"}|{"S":"10196"}|{"S":"ghalenorthern_jagat"}|{"S":"Jagat"}|{"S":"GRN"}|
+|{"S":"OmtMotherTongues"}|{"L":[{"S":"Pijao"},{"S":"Piajao"},{"S":"Pijao Paniquita"},{"S":"Pijao Paniquitá"},{"S":"Pinao"},{"S":"Pixao"}]}|{"S":"imported"}|{"N":"0"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"2025-02-11T14:31:54.754Z"}|{"N":"0"}|{"S":"pij"}|{"NULL":true}|{"S":"pijao_pijao"}|{"S":"Pijao"}|{"S":"generated"}|
+|{"S":"OmtMotherTongues"}|{"L":[{"S":"Kukele: Iteeji"}]}|{"S":"imported"}|{"N":"0"}|{"S":"2025-02-11T14:31:54.754Z"}|{"S":"2025-02-11T14:31:54.754Z"}|{"N":"0"}|{"S":"kez"}|{"S":"12423"}|{"S":"kukele_iteeji"}|{"S":"Iteeji"}|{"S":"GRN"}|
+...
+    
+OmtTranslations-4zxodgpo6zfadoq6zqgzhxovau-NONE
+View
+
+|__typename|motherTongueId|location|translators|status|createdAt|sourceLanguageId|translationName|userId|updatedAt|progress|id|format|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|{"S":"OmtTranslations"}|{"S":"bahasaindonesia_bahasanias"}|{"M":{"latitude":{"N":"-8.7950607"},"longitude":{"N":"115.1840752"}}}|{"L":[{"S":"Jeffery"}]}|{"S":"in_progress"}|{"S":"2025-03-07T05:15:40.180Z"}|{"S":"Bahasa Indonesia "}|{"S":"OMT"}|{"S":"e9b9397e-6011-7064-4ec8-9dfaaf71e53d"}|{"S":"2025-03-07T05:15:40.180Z"}|{"N":"0"}|{"S":"bahasaindonesia_bahasanias_OMT_1741324536880"}|{"S":"oral"}|
+|{"S":"OmtTranslations"}|{"S":"malagasymerina_vakinankaritra"}|{"M":{"latitude":{"N":"0"},"longitude":{"N":"0"}}}|{"L":[{"S":"Odilon"}]}|{"S":"in_progress"}|{"S":"2025-03-18T19:26:49.230Z"}|{"S":"English"}|{"S":"OMT"}|{"S":"19d9d93e-3031-709d-6618-4c0eafe29527"}|{"S":"2025-03-18T19:26:49.230Z"}|{"N":"0"}|{"S":"malagasymerina_vakinankaritra_OMT_1742326008851"}|{"S":"oral"}|
+```
