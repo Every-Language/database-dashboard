@@ -15,10 +15,12 @@ export function TableViewer({ tableName }: TableViewerProps) {
   const [data, setData] = useState<DynamoDBItem[]>([])
   const [columns, setColumns] = useState<ColumnDef<DynamoDBItem>[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     async function loadTableData() {
       setLoading(true)
+      setError(null)
       try {
         const items = await scanTable(tableName)
         setData(items)
@@ -37,9 +39,11 @@ export function TableViewer({ tableName }: TableViewerProps) {
             },
           }))
           setColumns(generatedColumns)
+        } else {
+          setColumns([])
         }
       } catch (_error) {
-        // Log error to your error tracking service instead of console
+        setError('Failed to load table data. Please try again.')
       } finally {
         setLoading(false)
       }
@@ -49,13 +53,31 @@ export function TableViewer({ tableName }: TableViewerProps) {
   }, [tableName])
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='text-lg'>Loading table data...</div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className='flex items-center justify-center p-8'>
+        <div className='text-lg text-red-500'>{error}</div>
+      </div>
+    )
   }
 
   return (
     <div className='space-y-4'>
       <h1 className='text-2xl font-bold tracking-tight'>{tableName}</h1>
-      <DataTable columns={columns} data={data} />
+      {data.length === 0 ? (
+        <div className='text-center text-gray-500'>
+          No items found in this table
+        </div>
+      ) : (
+        <DataTable columns={columns} data={data} />
+      )}
     </div>
   )
 }

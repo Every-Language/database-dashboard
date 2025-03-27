@@ -7,5 +7,8 @@ export const Route = createFileRoute('/_authenticated/tables/$tableName')({
 
 function TablePage() {
   const { tableName } = Route.useParams()
+  if (!tableName) {
+    return <div>No table name provided</div>
+  }
   return <TableViewer tableName={tableName} />
 }

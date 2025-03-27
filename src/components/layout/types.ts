@@ -1,5 +1,3 @@
-import { LinkProps } from '@tanstack/react-router'
-
 interface User {
   name: string
   email: string
@@ -19,12 +17,12 @@ interface BaseNavItem {
 }
 
 type NavLink = BaseNavItem & {
-  url: LinkProps['to']
+  url: string | { to: string; params?: Record<string, string> }
   items?: never
 }
 
 type NavCollapsible = BaseNavItem & {
-  items: (BaseNavItem & { url: LinkProps['to'] })[]
+  items: (BaseNavItem & { url: string | { to: string; params?: Record<string, string> } })[]
   url?: never
 }
 

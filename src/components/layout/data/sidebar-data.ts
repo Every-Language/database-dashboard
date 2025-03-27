@@ -45,7 +45,7 @@ export async function getSidebarData(): Promise<SidebarData> {
         title: 'DynamoDB Tables',
         items: tables.map((tableName: string) => ({
           title: tableName,
-          url: '/tables/$tableName' as const,
+          url: { to: '/tables/$tableName', params: { tableName } },
           icon: IconLayoutDashboard,
         })),
       },
