@@ -1,3 +1,4 @@
+import { useSidebarData } from '@/hooks/use-sidebar-data'
 import {
   Sidebar,
   SidebarContent,
@@ -8,11 +9,16 @@ import {
 import { NavGroup } from '@/components/layout/nav-group'
 import { NavUser } from '@/components/layout/nav-user'
 import { TeamSwitcher } from '@/components/layout/team-switcher'
-import { sidebarData } from './data/sidebar-data'
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar() {
+  const { data: sidebarData, isLoading } = useSidebarData()
+
+  if (isLoading || !sidebarData) {
+    return <div>Loading...</div>
+  }
+
   return (
-    <Sidebar collapsible='icon' variant='floating' {...props}>
+    <Sidebar collapsible='icon' variant='floating'>
       <SidebarHeader>
         <TeamSwitcher teams={sidebarData.teams} />
       </SidebarHeader>

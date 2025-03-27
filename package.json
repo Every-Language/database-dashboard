@@ -10,9 +10,11 @@
     "preview": "vite preview",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "knip": "knip"
+    "knip": "knip",
+    "generate": "npx @tanstack/router-cli@latest generate"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.775.0",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-avatar": "^1.1.1",
